@@ -8,7 +8,7 @@ void Input_delta(int delta[100][2], int qn);
 /*
 NFA accepts{0}[1]* U {0}*{1}
 
-corrsponds to the 5 state transition table
+corresponds to the 5 state transition table
    | 0     | 1     |  e
 ----|-------|-------|-----
 q0  |  {}   |  {}   | {q1,q3}
@@ -16,6 +16,8 @@ q1  |  {q2} |  {}   | {}
 q2  |  {}   | {q2}  | {}
 q3  | {q3}  | {q4}  | {}
 q4  |  {}   |  {}   | {}
+
+which we input as:
 
 int delta[100][2] = {
         0, 0,
