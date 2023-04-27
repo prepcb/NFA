@@ -105,7 +105,7 @@ int q_delta_a(int q, int a, int qn, int delta[100][2])
 int QorEps(int q, int qn, int epsilon[])
 {
     int i, ii = 1, p;
-    // int epsilon[5] = {10, 0, 0, 0, 0};
+    // e.g. int epsilon[5] = {10, 0, 0, 0, 0};
     p = q;
 
     for (i = 0; i < qn; i++)
