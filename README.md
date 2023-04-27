@@ -22,3 +22,5 @@ An example NFA to accept either an even number of 0s or multiple of 3 1s is:
 This code uses powers of 2 to represent the choice, e.g. 5 = 1 + 4 = 2^0 + 2^2 so = {0,2}
 
 Null = {} becomes 0
+
+The example given also accepts (due to epsilon transition for state 2)  0{00}* {11}{111}*
