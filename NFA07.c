@@ -63,13 +63,13 @@ int main()
             a = A[j];
             q = q_delta_a(q, a, qn, delta);
             while (q != QorEps(q, qn, epsilon))
-                q = QorEps(q, qn, epsilon); // Epsilon closure from intermediate state (though not necessary in this example)
+                q = QorEps(q, qn, epsilon); // Epsilon closure from intermediate state
             printf("A[%d]=%d,q=%d\n", j, A[j], q);
         }
 
         printf("Final q=%d\n", q);
 
-        if ((int)(q & f) != 0) // End state 2^4 or 2^2, i.e. 2 or 4
+        if ((int)(q & f) != 0) // End state e.g. {2,4}-> 2^4 or 2^2 = 20
             printf("\n accepted\n");
         else
             printf("\n not accepted\n");
