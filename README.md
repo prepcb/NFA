@@ -7,6 +7,14 @@ An example NFA to accept either an even number of 0s or multiple of 3 1s is:
 
 0   1   epsilon 
 
-_______________ 
+{}  {}    {1,3} 
 
-{}  {}    {1,3}   
+{2} {}      {}
+
+{1} {}     {4}
+
+{}   {4}    {}
+
+{}    {32}  {}
+
+{}    {8}   {}
