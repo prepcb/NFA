@@ -7,7 +7,7 @@ An example NFA to accept either an even number of 0s or multiple of 3 1s is:
 
 0   1   epsilon 
 
-{}  {}    {1,3} 
+{}  {}    {1,3}  -> 0 0 10
 
 {2} {}      {}
 
