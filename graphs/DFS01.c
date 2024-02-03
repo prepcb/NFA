@@ -8,12 +8,16 @@ void q(int A[N],int M[N][N],int n){
     //scanf("%c",&k);
     A[n]=1;
     int i, j;
-    //for(i=n;i<N;i++)
+    
     i = n;
-        for(j=0;j<N;j++)
-            if(M[i][j]==1)      //A[i]-->A[j] since M[i][j]=1
-                if(A[j]==0)     //1st occurrence of A[j]
-                    q(A,M,j);   //Find what A[j] --> ?
+//    for(i=0;i<N;i++)                //change these two lines for "i = n" for BFS
+//        if(A[i]==1)                 //for "i = n" for BFS. Check all A[i] on this level
+            for(j=0;j<N;j++)    
+                if(M[i][j]==1)      //A[i]-->A[j] since M[i][j]=1
+                    if(A[j]==0)     //1st occurrence of A[j]?
+                        q(A,M,j);   //Then find next in link:  A[j] --> ?
+                                    //on return (depth path exhausted) check next A[i]-->A[j]
+                                    //if no more then return up tree
         
 }
 
