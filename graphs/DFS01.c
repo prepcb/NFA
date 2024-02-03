@@ -8,11 +8,12 @@ void q(int A[N],int M[N][N],int n){
     //scanf("%c",&k);
     A[n]=1;
     int i, j;
-    for(i=0;i<N;i++)
-        if(A[i]==1)
-            for(j=0;j<N;j++)
-                if(M[i][j]==1)
-                    if(A[j]==0)q(A,M,j);
+    //for(i=n;i<N;i++)
+    i = n;
+        for(j=0;j<N;j++)
+            if(M[i][j]==1)      //A[i]-->A[j] since M[i][j]=1
+                if(A[j]==0)     //1st occurrence of A[j]
+                    q(A,M,j);   //Find what A[j] --> ?
         
 }
 
@@ -61,9 +62,16 @@ int M[N][N]={
             printf("j=%d\n",j);
         }
     }
+    
+
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++)
+            printf("%d,",M[i][j]);
+        printf("\n");
+    }
     */
     int A[N]={0};
-
+    printf("\n");
     q(A,M,0);
     printf("\n");
   
