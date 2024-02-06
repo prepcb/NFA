@@ -23,6 +23,7 @@ void q(int A[N],int M[N][N],int n){
 
                                     //on return (depth path exhausted) check next A[i]-->A[j]
                                     //if no more then return up tree
+ // these lines are to reverse order
         B[iB] = n;
         iB--;
         printf(" %c",n+'a');
@@ -90,7 +91,7 @@ int M[N][N]={
         printf("\n");
     }
 */
-    int A[N]={0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1};//dead letters
+    int A[N]={0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1};//dead letters c k q v x z 
     
     printf("\n");
     for(i=0;i<N;i++)
