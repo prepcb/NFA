@@ -5,14 +5,13 @@
 
 int B[N]={0},iB=19;//stores final order
 
-void q(int A[N],int M[N][N],int n){
+void q(int A[N],int M[N][N],int i){
     char k;
     //printf(" %c",n+'a');
     //scanf("%c",&k);
-    A[n]=1;
-    int i, j;
+    A[i]=1;
+    int j;
     
-    i = n;
     for(j=0;j<N;j++)  
         if(M[i][j]==1)      //A[i]-->A[j] since M[i][j]=1
             if(A[j]==0)     //1st occurrence of A[j]?
@@ -24,14 +23,18 @@ void q(int A[N],int M[N][N],int n){
                                     //on return (depth path exhausted) check next A[i]-->A[j]
                                     //if no more then return up tree
  // these lines are to reverse order
-    B[iB] = n;
+    B[iB] = i;
     iB--;
     //print as we find them
-    printf("%c",n+'a');
+    printf("%c",i+'a');
 }
 
 int main(){
 
+//contains all the transitions 
+//row 0 for 'a'
+//row 1 for 'b' etc
+//row 4='d' has a transition to j and w (column 9 and 22 respectively)
 int M[N][N]={
 0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,
 0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -90,6 +93,8 @@ int M[N][N]={
 
 
     //compute dead letters to exclude them
+    //these letters are not in the graph but useful
+    // to have for conversion to numbers a=0,b=1,c=2 etc
     int A[N]={0};
     int sum;
     for(j=0;j<N;j++)
@@ -106,6 +111,7 @@ int M[N][N]={
     printf("\n");
 
     printf("\n");
+    //top call to topological search
     for(i=0;i<N;i++)
         if(A[i]==0)q(A,M,i);
     printf("\n\n");
