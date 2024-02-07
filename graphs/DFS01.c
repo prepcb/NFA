@@ -5,13 +5,12 @@
 void q(int A[N],int M[N][N],int n){
     char k;
     printf(" %c",n+'a');
-    //scanf("%c",&k);
     A[n]=1;
     int i, j;
     
     i = n;
-    for(i=0;i<N;i++)                //change these two lines for "i = n" for BFS
-        if(A[i]==1)                 //for "i = n" for BFS. Check all A[i] on this level
+  //  for(i=0;i<N;i++)                //change these two lines for "i = n" for BFS
+   //     if(A[i]==1)                 //for "i = n" for BFS. Check all A[i] on this level
             for(j=0;j<N;j++)    
                 if(M[i][j]==1)      //A[i]-->A[j] since M[i][j]=1
                     if(A[j]==0)     //1st occurrence of A[j]?
