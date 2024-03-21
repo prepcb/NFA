@@ -25,9 +25,9 @@ void q1(int A[],int a,int S[],int s){
             return;
         default:
             S[s+1] = A[a];
-            q2(A,a+1,S,s+1);
-            q2(A,a+1,S,s);
-            q1(A,a+1,S,s+1);
+            q2(A,a+1,S,s+1);//assume LHS of string is read (centre reached)
+            q2(A,a+1,S,s);  //option for  central character (off length)
+            q1(A,a+1,S,s+1);//keep reading LHS of string
     }
 }
 
