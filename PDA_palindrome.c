@@ -7,7 +7,7 @@ void q2(int A[],int a,int S[],int s);
 void q3();
 
 void q0(int A[],int S[]){
-    printf("q0: string index %d stack index %d\n",a,s);
+    printf("q0: string index (%d) value %2d; stack index %d\n",0,A[0],0);
 
     switch(A[0]){
         case -1:
@@ -19,7 +19,7 @@ void q0(int A[],int S[]){
 }
 
 void q1(int A[],int a,int S[],int s){
-    printf("q1: string index %d stack index %d\n",a,s);
+    printf("q1: string index (%d) value %2d; stack index %d\n",a,A[a],s);
     switch(A[a]){
         case -1:
             return;
@@ -32,7 +32,7 @@ void q1(int A[],int a,int S[],int s){
 }
 
 void q2(int A[],int a,int S[],int s){
-    printf("q2: string index %d stack index %d\n",a,s);
+    printf("q2: string index (%d) value %2d; stack index %d\n",a,A[a],s);
     int d;
     d = S[s] - A[a];
     switch(d){
@@ -55,6 +55,11 @@ void q3(){
 int main(){
     int A[] = {6,8,12,3,10,10,3,12,8,6,-1};
     int S[99] = {-2};
+    printf("for string \n{");
+    int i;
+    for(i=0;i<9;i++)
+        printf("%2d, ",A[i]);
+    printf("%2d}\n we test for palingdrome\n",A[9]);
     q0(A,S);
     printf("Fail: not a palindrome\n");
 }
