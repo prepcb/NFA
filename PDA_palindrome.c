@@ -7,7 +7,7 @@ void q2(int A[],int a,int S[],int s);
 void q3();
 
 void q0(int A[],int S[]){
-    printf("q0: %d\n",0);
+    printf("q0: string index %d stack index %d\n",a,s);
 
     switch(A[0]){
         case -1:
